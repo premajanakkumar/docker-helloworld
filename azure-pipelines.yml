@@ -40,4 +40,4 @@ stages:
           
       
                 docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
-                docker push  hub.docker.com/repositories/mytestrepo:$(tag)
+                docker push  premajanakumar/mytestrepo:$(tag)
