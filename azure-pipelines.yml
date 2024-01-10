@@ -11,8 +11,8 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  username: premajanakkumar
-  password: vka7eqm.dyw9kru0UGJ
+  #username: premajanakkumar
+  #password: vka7eqm.dyw9kru0UGJ
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
@@ -28,8 +28,8 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-       echo $(username)
-       echo $(password)
+       echo $(pipeline-variables.username)
+       echo $(pipeline-variables.password)
 
 
 
