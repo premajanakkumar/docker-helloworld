@@ -36,5 +36,7 @@ stages:
         targetType: 'inline'
         script: |
           # Write your commands here
+          echo $pwd
+          ls -ltr
           docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
           docker push  premajanakumar/mytestrepo:$(tag)
