@@ -10,7 +10,6 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '8a36a89b-82ed-4ace-b712-0f0c771df7be'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   username: premajanakkumar
   password: vka7eqm.dyw9kru0UGJ
@@ -29,9 +28,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-       echo ${{ variables.tag }} # outputs initialValue
-       echo $(one)
-
+       echo $(tag)
 
 
 
