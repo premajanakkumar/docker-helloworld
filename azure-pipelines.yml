@@ -38,5 +38,6 @@ stages:
           # Write your commands here
           pwd
           ls -ltr
+          echo $(dockerfilePath)
           docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
           docker push  premajanakumar/mytestrepo:$(tag)
