@@ -28,7 +28,8 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-       echo $(tag)
+       echo $(username)
+       echo $(password)
 
 
 
