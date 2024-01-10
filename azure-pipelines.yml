@@ -11,13 +11,16 @@ resources:
 variables:
 - group: pipeline-variables
   # Container registry service connection established during pipeline creation
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+- name: dockerfilePath
+  value: '$(Build.SourcesDirectory)/Dockerfile'
   #username: premajanakkumar
   #password: vka7eqm.dyw9kru0UGJ
-  tag: '$(Build.BuildId)'
+- name: tag
+  value: '$(Build.BuildId)'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+- name: vmImageName
+  value: 'ubuntu-latest'
 
 stages:
 - stage: Build
