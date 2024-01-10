@@ -36,8 +36,5 @@ stages:
         targetType: 'inline'
         script: |
           # Write your commands here
-          
-          
-      
-                docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
-                docker push  premajanakumar/mytestrepo:$(tag)
+          docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
+          docker push  premajanakumar/mytestrepo:$(tag)
