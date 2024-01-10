@@ -32,8 +32,8 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-       echo $(pipeline-variables.username)
-       echo $(pipeline-variables.password)
+       echo $(username)
+       echo $(password)
 
 
 
