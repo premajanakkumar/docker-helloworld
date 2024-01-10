@@ -31,10 +31,13 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - script: |
-       echo $(username)
-       echo $(password)
-
-
-
-    
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your commands here
+          
+          
+                 docker login -u $(username) -p  $(password)
+                docker build -t  premajanakumar/mytestrepo:$(tag) $(dockerfilePath)
+                docker push  premajanakumar/mytestrepo:$(tag)
