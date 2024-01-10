@@ -31,13 +31,20 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: Bash@3
-      inputs:
-        targetType: 'inline'
-        script: |
-          # Write your commands here
-          pwd
-          ls -ltr
-          echo $(dockerfilePath)
-          docker build -t  premajanakumar/mytestrepo:$(tag) /home/vsts/work/1/s/Dockerfile
-          docker push  premajanakumar/mytestrepo:$(tag)
+    # - task: Bash@3
+    #   inputs:
+    #     targetType: 'inline'
+    #     script: |
+    #       # Write your commands here
+    #       pwd
+    #       ls -ltr
+    #       echo $(dockerfilePath)
+    #       docker build -t  premajanakumar/mytestrepo:$(tag) /home/vsts/work/1/s/Dockerfile
+    #       docker push  premajanakumar/mytestrepo:$(tag)
+     
+     - task: Docker@2
+       inputs:
+         containerRegistry: 'docker registry'
+         repository: 'premajanakumar/mytestrepo'
+         command: 'buildAndPush'
+         Dockerfile: '**/Dockerfile'
